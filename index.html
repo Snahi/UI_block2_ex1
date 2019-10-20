@@ -9,7 +9,7 @@
     <script type="text/javascript" src="scripts/index_script.js"></script>
 
 </head>
-<body onload="fitFontSizeForActivities()">
+<body onload="loadSite()">
 
     <!-- site header ----------------------------------------------------------------------------------------------- -->
     <header id="site_header">
@@ -34,8 +34,18 @@
         <div class="activities_group">
 
             <header class="activities_group_header">
-                <h1>header 1</h1>
-                <img class="group_hamburger" src="images/hamburger.png" alt="menu" />
+                <h1>School stuff</h1>
+                <img class="group_hamburger" onclick="showGroupMenu(this.parentNode)" src="images/hamburger.png" alt="menu" />
+
+                <!-- group menu opened by clicking group_hamburger -->
+                <nav class="group_menu">
+                    <ul>
+                        <li onclick="archiveActivityGroup(this.parentNode.parentNode.parentNode.parentNode)">archive this list</li>
+                        <li>share</li>
+                        <li>merge</li>
+                        <li>customize</li>
+                    </ul>
+                </nav>
             </header>
 
             <!-- activities ---------------------------------------------------------------------------------------- -->
@@ -44,18 +54,28 @@
             <article class="activity">
 
                 <div class="img_and_description">
-                    <img class="activity_image" src="images/activity_1.jpg" alt="image" />
+                    <img class="activity_image" src="images/activity_6.jpg" alt="image" />
 
-                    <p>Getting new hike & fly wing for next x-alps. I have to decide on special producer, probably Advance
-                        or Ozone.</p>
+                    <p class="activity_description">Survive the next day</p>
                 </div>
 
                 <img class="close" src="images/close.png" alt="x" onclick="closeActivity(this.parentElement)"/>
 
                 <div class="activity_bottom_panel">
-                    <img class="like_icon bottom_panel_icon" src="images/like.png" alt="like" />
-                    <img class="comment_icon bottom_panel_icon" src="images/comment.png" alt="comment" />
-                    <img class="share_icon bottom_panel_icon" src="images/share.png" alt="share" />
+                    <!-- the only reason why images are nested into these divs (like comment_icon_div) is that I can't
+                    use ::after pseudo elements on img tag -->
+                    <div class="like_icon_div bottom_panel_icon_div">
+                        <img class="like_icon bottom_panel_icon" onclick="onLikeClicked(this)"
+                             src="images/like.png" alt="like" />
+                    </div>
+                    <div class="comment_icon_div bottom_panel_icon_div">
+                        <img class="comment_icon bottom_panel_icon" src="images/comment.png" alt="comment" />
+                    </div>
+                    <div class="share_icon_div bottom_panel_icon_div">
+                        <img class="share_icon bottom_panel_icon"
+                             onclick="onShareClicked(this.parentNode.parentNode.parentNode)"
+                             src="images/share.png" alt="share" />
+                    </div>
 
                     <span class="date_time">20/10/2019 17:17</span>
                 </div>
@@ -65,18 +85,31 @@
             <!-- activity 2 ----------------------------------------------------- -->
             <article class="activity">
 
-                <img class="activity_image" src="" alt="image" />
+                <div class="img_and_description">
+                    <img class="activity_image" src="images/activity_2.jpg" alt="image" />
 
-                <p></p>
+                    <p class="activity_description">study for a match exam</p>
+                </div>
 
-                <img class="close" src="" alt="x" />
+                <img class="close" src="images/close.png" alt="x" onclick="closeActivity(this.parentElement)"/>
 
                 <div class="activity_bottom_panel">
-                    <img class="like_icon" src="" alt="like" />
-                    <img class="comment_icon" src="" alt="comment" />
-                    <img class="share_icon" src="" alt="share" />
+                    <!-- the only reason why images are nested into these divs (like comment_icon_div) is that I can't
+                    use ::after pseudo elements on img tag -->
+                    <div class="like_icon_div bottom_panel_icon_div">
+                        <img class="like_icon bottom_panel_icon" onclick="onLikeClicked(this)"
+                             src="images/like.png" alt="like" />
+                    </div>
+                    <div class="comment_icon_div bottom_panel_icon_div">
+                        <img class="comment_icon bottom_panel_icon" src="images/comment.png" alt="comment" />
+                    </div>
+                    <div class="share_icon_div bottom_panel_icon_div">
+                        <img class="share_icon bottom_panel_icon"
+                             onclick="onShareClicked(this.parentNode.parentNode.parentNode)"
+                             src="images/share.png" alt="share" />
+                    </div>
 
-                    <span class="date_time"></span>
+                    <span class="date_time">20/10/2019 17:17</span>
                 </div>
 
             </article>
@@ -84,18 +117,31 @@
             <!-- activity 3 ----------------------------------------------------- -->
             <article class="activity">
 
-                <img class="activity_image" src="" alt="image" />
+                <div class="img_and_description">
+                    <img class="activity_image" src="images/activity_3.jpeg" alt="image" />
 
-                <p></p>
+                    <p class="activity_description">Help Jacob with physics and learning for exam as well</p>
+                </div>
 
-                <img class="close" src="" alt="x" />
+                <img class="close" src="images/close.png" alt="x" onclick="closeActivity(this.parentElement)"/>
 
                 <div class="activity_bottom_panel">
-                    <img class="like_icon" src="" alt="like" />
-                    <img class="comment_icon" src="" alt="comment" />
-                    <img class="share_icon" src="" alt="share" />
+                    <!-- the only reason why images are nested into these divs (like comment_icon_div) is that I can't
+                    use ::after pseudo elements on img tag -->
+                    <div class="like_icon_div bottom_panel_icon_div">
+                        <img class="like_icon bottom_panel_icon" onclick="onLikeClicked(this)"
+                             src="images/like.png" alt="like" />
+                    </div>
+                    <div class="comment_icon_div bottom_panel_icon_div">
+                        <img class="comment_icon bottom_panel_icon" src="images/comment.png" alt="comment" />
+                    </div>
+                    <div class="share_icon_div bottom_panel_icon_div">
+                        <img class="share_icon bottom_panel_icon"
+                             onclick="onShareClicked(this.parentNode.parentNode.parentNode)"
+                             src="images/share.png" alt="share" />
+                    </div>
 
-                    <span class="date_time"></span>
+                    <span class="date_time">20/10/2019 17:17</span>
                 </div>
 
             </article>
@@ -103,18 +149,31 @@
             <!-- activity 4 ----------------------------------------------------- -->
             <article class="activity">
 
-                <img class="activity_image" src="" alt="image" />
+                <div class="img_and_description">
+                    <img class="activity_image" src="images/activity_4.jpg" alt="image" />
 
-                <p></p>
+                    <p class="activity_description">buy new coloured pencils and brush them</p>
+                </div>
 
-                <img class="close" src="" alt="x" />
+                <img class="close" src="images/close.png" alt="x" onclick="closeActivity(this.parentElement)"/>
 
                 <div class="activity_bottom_panel">
-                    <img class="like_icon" src="" alt="like" />
-                    <img class="comment_icon" src="" alt="comment" />
-                    <img class="share_icon" src="" alt="share" />
+                    <!-- the only reason why images are nested into these divs (like comment_icon_div) is that I can't
+                    use ::after pseudo elements on img tag -->
+                    <div class="like_icon_div bottom_panel_icon_div">
+                        <img class="like_icon bottom_panel_icon" onclick="onLikeClicked(this)"
+                             src="images/like.png" alt="like" />
+                    </div>
+                    <div class="comment_icon_div bottom_panel_icon_div">
+                        <img class="comment_icon bottom_panel_icon" src="images/comment.png" alt="comment" />
+                    </div>
+                    <div class="share_icon_div bottom_panel_icon_div">
+                        <img class="share_icon bottom_panel_icon"
+                             onclick="onShareClicked(this.parentNode.parentNode.parentNode)"
+                             src="images/share.png" alt="share" />
+                    </div>
 
-                    <span class="date_time"></span>
+                    <span class="date_time">20/10/2019 17:17</span>
                 </div>
 
             </article>
@@ -122,18 +181,31 @@
             <!-- activity 5 ----------------------------------------------------- -->
             <article class="activity">
 
-                <img class="activity_image" src="" alt="image" />
+                <div class="img_and_description">
+                    <img class="activity_image" src="images/activity_5.jpg" alt="image" />
 
-                <p></p>
+                    <p class="activity_description">Go to library and get statistics book</p>
+                </div>
 
-                <img class="close" src="" alt="x" />
+                <img class="close" src="images/close.png" alt="x" onclick="closeActivity(this.parentElement)"/>
 
                 <div class="activity_bottom_panel">
-                    <img class="like_icon" src="" alt="like" />
-                    <img class="comment_icon" src="" alt="comment" />
-                    <img class="share_icon" src="" alt="share" />
+                    <!-- the only reason why images are nested into these divs (like comment_icon_div) is that I can't
+                    use ::after pseudo elements on img tag -->
+                    <div class="like_icon_div bottom_panel_icon_div">
+                        <img class="like_icon bottom_panel_icon" onclick="onLikeClicked(this)"
+                             src="images/like.png" alt="like" />
+                    </div>
+                    <div class="comment_icon_div bottom_panel_icon_div">
+                        <img class="comment_icon bottom_panel_icon" src="images/comment.png" alt="comment" />
+                    </div>
+                    <div class="share_icon_div bottom_panel_icon_div">
+                        <img class="share_icon bottom_panel_icon"
+                             onclick="onShareClicked(this.parentNode.parentNode.parentNode)"
+                             src="images/share.png" alt="share" />
+                    </div>
 
-                    <span class="date_time"></span>
+                    <span class="date_time">20/10/2019 17:17</span>
                 </div>
 
             </article>
@@ -144,21 +216,214 @@
         <div class="activities_group">
 
             <header class="activities_group_header">
-                <h1></h1>
-                <img class="group_hamburger" src="" alt="menu" />
+                <h1>Birthday party</h1>
+                <img class="group_hamburger" onclick="showGroupMenu(this.parentNode)" src="images/hamburger.png" alt="menu" />
+
+                <!-- group menu opened by clicking group_hamburger -->
+                <nav class="group_menu">
+                    <ul>
+                        <li onclick="archiveActivityGroup(this.parentNode.parentNode.parentNode.parentNode)">archive this list</li>
+                        <li>share</li>
+                        <li>merge</li>
+                        <li>customize</li>
+                    </ul>
+                </nav>
             </header>
+
+            <!-- activities ---------------------------------------------------------------------------------------- -->
+
+            <!-- activity 1 ----------------------------------------------------- -->
+            <article class="activity">
+
+                <div class="img_and_description">
+                    <img class="activity_image" src="images/activity_7.jpg" alt="image" />
+
+                    <p class="activity_description">get some balloons</p>
+                </div>
+
+                <img class="close" src="images/close.png" alt="x" onclick="closeActivity(this.parentElement)"/>
+
+                <div class="activity_bottom_panel">
+                    <!-- the only reason why images are nested into these divs (like comment_icon_div) is that I can't
+                    use ::after pseudo elements on img tag -->
+                    <div class="like_icon_div bottom_panel_icon_div">
+                        <img class="like_icon bottom_panel_icon" onclick="onLikeClicked(this)"
+                             src="images/like.png" alt="like" />
+                    </div>
+                    <div class="comment_icon_div bottom_panel_icon_div">
+                        <img class="comment_icon bottom_panel_icon" src="images/comment.png" alt="comment" />
+                    </div>
+                    <div class="share_icon_div bottom_panel_icon_div">
+                        <img class="share_icon bottom_panel_icon"
+                             onclick="onShareClicked(this.parentNode.parentNode.parentNode)"
+                             src="images/share.png" alt="share" />
+                    </div>
+
+                    <span class="date_time">20/10/2019 17:17</span>
+                </div>
+
+            </article>
+
+            <!-- activity 2 ----------------------------------------------------- -->
+            <article class="activity">
+
+                <div class="img_and_description">
+                    <img class="activity_image" src="images/activity_8.JPG" alt="image" />
+
+                    <p class="activity_description">Prepare kluski śląskie and rolada with modra kapusta</p>
+                </div>
+
+                <img class="close" src="images/close.png" alt="x" onclick="closeActivity(this.parentElement)"/>
+
+                <div class="activity_bottom_panel">
+                    <!-- the only reason why images are nested into these divs (like comment_icon_div) is that I can't
+                    use ::after pseudo elements on img tag -->
+                    <div class="like_icon_div bottom_panel_icon_div">
+                        <img class="like_icon bottom_panel_icon" onclick="onLikeClicked(this)"
+                             src="images/like.png" alt="like" />
+                    </div>
+                    <div class="comment_icon_div bottom_panel_icon_div">
+                        <img class="comment_icon bottom_panel_icon" src="images/comment.png" alt="comment" />
+                    </div>
+                    <div class="share_icon_div bottom_panel_icon_div">
+                        <img class="share_icon bottom_panel_icon"
+                             onclick="onShareClicked(this.parentNode.parentNode.parentNode)"
+                             src="images/share.png" alt="share" />
+                    </div>
+
+                    <span class="date_time">20/10/2019 17:17</span>
+                </div>
+
+            </article>
+
         </div> <!-- /group 2 -->
 
         <!-- group 3 ----------------------------------------------------------------------------------------------- -->
         <div class="activities_group">
 
             <header class="activities_group_header">
-                <h1></h1>
-                <img class="group_hamburger" src="" alt="menu" />
+                <h1>Work</h1>
+                <img class="group_hamburger" onclick="showGroupMenu(this.parentNode)" src="images/hamburger.png" alt="menu" />
+
+                <!-- group menu opened by clicking group_hamburger -->
+                <nav class="group_menu">
+                    <ul>
+                        <li onclick="archiveActivityGroup(this.parentNode.parentNode.parentNode.parentNode)">archive this list</li>
+                        <li>share</li>
+                        <li>merge</li>
+                        <li>customize</li>
+                    </ul>
+                </nav>
             </header>
+
+            <!-- activities ---------------------------------------------------------------------------------------- -->
+
+            <!-- activity 1 ----------------------------------------------------- -->
+            <article class="activity">
+
+                <div class="img_and_description">
+                    <img class="activity_image" src="images/activity_9.png" alt="image" />
+
+                    <p class="activity_description">Fix bug occurring during user creation</p>
+                </div>
+
+                <img class="close" src="images/close.png" alt="x" onclick="closeActivity(this.parentElement)"/>
+
+                <div class="activity_bottom_panel">
+                    <!-- the only reason why images are nested into these divs (like comment_icon_div) is that I can't
+                    use ::after pseudo elements on img tag -->
+                    <div class="like_icon_div bottom_panel_icon_div">
+                        <img class="like_icon bottom_panel_icon" onclick="onLikeClicked(this)"
+                             src="images/like.png" alt="like" />
+                    </div>
+                    <div class="comment_icon_div bottom_panel_icon_div">
+                        <img class="comment_icon bottom_panel_icon" src="images/comment.png" alt="comment" />
+                    </div>
+                    <div class="share_icon_div bottom_panel_icon_div">
+                        <img class="share_icon bottom_panel_icon"
+                             onclick="onShareClicked(this.parentNode.parentNode.parentNode)"
+                             src="images/share.png" alt="share" />
+                    </div>
+
+                    <span class="date_time">20/10/2019 17:17</span>
+                </div>
+
+            </article>
+
+            <!-- activity 2 ----------------------------------------------------- -->
+            <article class="activity">
+
+                <div class="img_and_description">
+                    <img class="activity_image" src="images/activity_10.jpg" alt="image" />
+
+                    <p class="activity_description">Discuss new tasks and split them between team members</p>
+                </div>
+
+                <img class="close" src="images/close.png" alt="x" onclick="closeActivity(this.parentElement)"/>
+
+                <div class="activity_bottom_panel">
+                    <!-- the only reason why images are nested into these divs (like comment_icon_div) is that I can't
+                    use ::after pseudo elements on img tag -->
+                    <div class="like_icon_div bottom_panel_icon_div">
+                        <img class="like_icon bottom_panel_icon" onclick="onLikeClicked(this)"
+                             src="images/like.png" alt="like" />
+                    </div>
+                    <div class="comment_icon_div bottom_panel_icon_div">
+                        <img class="comment_icon bottom_panel_icon" src="images/comment.png" alt="comment" />
+                    </div>
+                    <div class="share_icon_div bottom_panel_icon_div">
+                        <img class="share_icon bottom_panel_icon"
+                             onclick="onShareClicked(this.parentNode.parentNode.parentNode)"
+                             src="images/share.png" alt="share" />
+                    </div>
+
+                    <span class="date_time">20/10/2019 17:17</span>
+                </div>
+
+            </article>
+
+            <!-- activity 3 ----------------------------------------------------- -->
+            <article class="activity">
+
+                <div class="img_and_description">
+                    <img class="activity_image" src="images/activity_11.jpg" alt="image" />
+
+                    <p class="activity_description">Order new table football because of recent events</p>
+                </div>
+
+                <img class="close" src="images/close.png" alt="x" onclick="closeActivity(this.parentElement)"/>
+
+                <div class="activity_bottom_panel">
+                    <!-- the only reason why images are nested into these divs (like comment_icon_div) is that I can't
+                    use ::after pseudo elements on img tag -->
+                    <div class="like_icon_div bottom_panel_icon_div">
+                        <img class="like_icon bottom_panel_icon" onclick="onLikeClicked(this)"
+                             src="images/like.png" alt="like" />
+                    </div>
+                    <div class="comment_icon_div bottom_panel_icon_div">
+                        <img class="comment_icon bottom_panel_icon" src="images/comment.png" alt="comment" />
+                    </div>
+                    <div class="share_icon_div bottom_panel_icon_div">
+                        <img class="share_icon bottom_panel_icon"
+                             onclick="onShareClicked(this.parentNode.parentNode.parentNode)"
+                             src="images/share.png" alt="share" />
+                    </div>
+
+                    <span class="date_time">20/10/2019 17:17</span>
+                </div>
+
+            </article>
+
         </div> <!-- /group 3 -->
 
-    </section>
+    </section> <!-- /content -->
+
+
+    <footer>
+        <a href="#">Copyright</a>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+    </footer>
 
 
     <!-- popups ---------------------------------------------------------------------------------------------------- -->
@@ -166,6 +431,28 @@
         <p>Are you sure that you want to delete this activity?</p>
         <button id="yes_button">Yes</button>
         <button id="no_button">No</button>
+    </div>
+
+
+    <div id="share_popup">
+        <img class="close" onclick="closeSharePopup()" src="images/close.png" alt="x"/>
+
+        <h1 id="activity_name"></h1>
+
+        <div id="share_icons_div">
+            <div id="share_facebook" class="share_popup_share_icon">
+                <img src="images/facebook.png" alt="facebook"/>
+            </div>
+
+            <div id="share_twitter" class="share_popup_share_icon">
+                <img src="images/twitter.png" alt="twitter"/>
+            </div>
+
+            <div id="share_email" class="share_popup_share_icon">
+                <img src="images/email.png" alt="email"/>
+            </div>
+        </div>
+
     </div>
 
 
