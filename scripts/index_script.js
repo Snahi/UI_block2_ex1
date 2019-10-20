@@ -88,7 +88,10 @@ function fitFontSizeForActivities()
 function fitFontSizeForActivity(text, image)
 {
     if (!isMultiLine(text)) // adjust size only for multiline texts
+    {
+        text.style.fontSize = "24px";   // so that they are always equal
         return;
+    }
 
     text.style.fontSize = "10px";
     var textHeight  = getElementHeight(text);
