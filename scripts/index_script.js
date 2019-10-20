@@ -31,6 +31,43 @@ function hideGroupMenuPopupWhenClick()
 
 
 
+// cookies /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+function setCookie(name, value, daysTillExpire)
+{
+    var d = new Date();
+    d.setTime(d.getTime() + (daysTillExpire * 24 * 60 * 60 * 1000));    // transform days to milliseconds
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+
+
+function getCookie(cookieName)
+{
+    var name            = cookieName + "=";
+    var decodedCookie   = decodeURIComponent(document.cookie);
+    var ca              = decodedCookie.split(';');
+
+    for(var i = 0; i <ca.length; i++)
+    {
+        var c = ca[i];
+        while (c.charAt(0) === ' ')
+        {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) === 0)
+        {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+
+
 // activity group //////////////////////////////////////////////////////////////////////////////////////////////////////
 var GROUP_MENU_CLASS = "group_menu";
 
