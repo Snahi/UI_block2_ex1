@@ -68,7 +68,7 @@ function getCookie(cookieName)
 
 
 
-// log in / out ////////////////////////////////////////////////////////////////////////////////////////////////////////
+// log in / out / register /////////////////////////////////////////////////////////////////////////////////////////////
 var CURRENT_USER_NICK_NAME  = "currUserNick";
 var CONTENT_ID              = "content";
 var USER_DATA_ID            = "user_data";
@@ -76,6 +76,7 @@ var SIGNED_IN_CLASS         = "signed_in";
 var SIGNED_OUT_CLASS        = "signed_out";
 var ACTIVITIES_GROUP_CLASS  = "activities_group";
 var REGISTER_FORM_ID        = "register_form";
+var USER_DATA_SEPARATOR     = "&";
 
 
 function logOut()
@@ -113,6 +114,60 @@ function showRegisterForm()
     var registerForm = document.getElementById(REGISTER_FORM_ID);
 
     registerForm.style.display = "flex";
+}
+
+
+
+function register(email, password, username, name, surname, birthDate, language, interests, purpose)
+{
+    let isEmailUnique = obtainUser(email) === null;
+
+    if (isEmailUnique)
+    {
+        storeUser(email, password, username, name, surname, birthDate, language, interests, purpose);
+        window.alert("account created");
+    }
+    else
+    {
+        window.alert("user with such email already exists");
+    }
+}
+
+
+
+function storeUser(email, password, username, name, surname, birthDate, language, interests, purpose)
+{
+    var userCookie = email + USER_DATA_SEPARATOR + password + USER_DATA_SEPARATOR + username + USER_DATA_SEPARATOR +
+        name + USER_DATA_SEPARATOR + surname + USER_DATA_SEPARATOR + birthDate + USER_DATA_SEPARATOR + language +
+        USER_DATA_SEPARATOR + interests + USER_DATA_SEPARATOR + purpose;
+
+    setCookie(email, userCookie, 1000);
+}
+
+
+
+function obtainUser(email)
+{
+    var userCookie  = getCookie(email);
+    var user        = null;
+
+    if (userCookie !== "")
+    {
+        var userData = userCookie.split(USER_DATA_SEPARATOR);
+        user = {
+            email:      userData[0],
+            password:   userData[1],
+            username:   userData[2],
+            name:       userData[3],
+            surname:    userData[4],
+            birthDate:  userData[5],
+            language:   userData[6],
+            interests:  userData[7],
+            purpose:    userData[8]
+        }
+    }
+
+    return user;
 }
 
 

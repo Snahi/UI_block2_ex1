@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be43df3b-2741-4c6e-92cf-b36c9eccf2eb" name="Default Changelist" comment="- exercise 1 done">
-      <change afterPath="$PROJECT_DIR$/images/default_user_image.png" afterDir="false" />
+    <list default="true" id="be43df3b-2741-4c6e-92cf-b36c9eccf2eb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/index_script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index_script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/index_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/index_style.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3026">
-              <caret line="178" column="27" lean-forward="true" selection-start-line="178" selection-start-column="27" selection-end-line="178" selection-end-column="27" />
+            <state relative-caret-position="97">
+              <caret line="419" column="22" selection-start-line="419" selection-start-column="22" selection-end-line="419" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -29,7 +27,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style/index_style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7751">
+            <state relative-caret-position="-1977">
               <caret line="76" selection-start-line="76" selection-end-line="76" />
             </state>
           </provider>
@@ -38,16 +36,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/index_script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="115" column="1" selection-start-line="115" selection-start-column="1" selection-end-line="115" selection-end-column="1" />
+            <state relative-caret-position="233">
+              <caret line="122" column="28" selection-start-line="122" selection-start-column="28" selection-end-line="122" selection-end-column="28" />
               <folding>
                 <element signature="n#!!block;n#loadSite#0" expanded="true" />
                 <element signature="n#!!block;n#hideGroupMenuPopupWhenClick#0" expanded="true" />
                 <element signature="e#401#836#0" expanded="true" />
                 <element signature="n#!!block;n#setCookie#0" expanded="true" />
                 <element signature="n#!!block;n#getCookie#0" expanded="true" />
-                <element signature="n#!!block;n#logOut#0" expanded="true" />
                 <element signature="n#!!block;n#showRegisterForm#0" expanded="true" />
+                <element signature="n#!!block;n#storeUser#0" expanded="true" />
+                <element signature="n#!!block;n#obtainUser#0" expanded="true" />
                 <element signature="n#!!block;n#showGroupMenu#0" expanded="true" />
                 <element signature="n#!!block;n#archiveActivityGroup#0" expanded="true" />
                 <element signature="n#!!block;n#fitFontSizeForActivities#0" expanded="true" />
@@ -98,15 +97,21 @@
       <list>
         <option value="$PROJECT_DIR$/script/index_script.js" />
         <option value="$PROJECT_DIR$/style/index_style.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/scripts/index_script.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
+    <option name="x" value="-10" />
     <option name="width" value="1235" />
-    <option name="height" value="1039" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -114,6 +119,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -141,18 +147,22 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571616662193" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571650605724" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -205,7 +215,9 @@
       <workItem from="1571134121707" duration="667000" />
       <workItem from="1571568369747" duration="25523000" />
       <workItem from="1571600990456" duration="10968000" />
-      <workItem from="1571615681977" duration="944000" />
+      <workItem from="1571615681977" duration="1584000" />
+      <workItem from="1571617314735" duration="17000" />
+      <workItem from="1571645575755" duration="4955000" />
     </task>
     <task id="LOCAL-00001" summary="- delete activity complete">
       <created>1570740317456</created>
@@ -235,17 +247,24 @@
       <option name="project" value="LOCAL" />
       <updated>1571594505917</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="- form frontend done">
+      <created>1571616768989</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1571616768989</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71780000" />
+    <option name="totallyTimeSpent" value="77392000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16107382" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16510066" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -283,7 +302,8 @@
     <MESSAGE value="- delete activity complete" />
     <MESSAGE value="- exercise 1 done, although some minor changes may be done, like ... if text is too long" />
     <MESSAGE value="- exercise 1 done" />
-    <option name="LAST_COMMIT_MESSAGE" value="- exercise 1 done" />
+    <MESSAGE value="- form frontend done" />
+    <option name="LAST_COMMIT_MESSAGE" value="- form frontend done" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://D:/Documents/websites/www.janniemczyk.pl/v3/main/main_style.css">
@@ -295,23 +315,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/style/index_style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7751">
+        <state relative-caret-position="-1977">
           <caret line="76" selection-start-line="76" selection-end-line="76" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/index_script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="115" column="1" selection-start-line="115" selection-start-column="1" selection-end-line="115" selection-end-column="1" />
+        <state relative-caret-position="233">
+          <caret line="122" column="28" selection-start-line="122" selection-start-column="28" selection-end-line="122" selection-end-column="28" />
           <folding>
             <element signature="n#!!block;n#loadSite#0" expanded="true" />
             <element signature="n#!!block;n#hideGroupMenuPopupWhenClick#0" expanded="true" />
             <element signature="e#401#836#0" expanded="true" />
             <element signature="n#!!block;n#setCookie#0" expanded="true" />
             <element signature="n#!!block;n#getCookie#0" expanded="true" />
-            <element signature="n#!!block;n#logOut#0" expanded="true" />
             <element signature="n#!!block;n#showRegisterForm#0" expanded="true" />
+            <element signature="n#!!block;n#storeUser#0" expanded="true" />
+            <element signature="n#!!block;n#obtainUser#0" expanded="true" />
             <element signature="n#!!block;n#showGroupMenu#0" expanded="true" />
             <element signature="n#!!block;n#archiveActivityGroup#0" expanded="true" />
             <element signature="n#!!block;n#fitFontSizeForActivities#0" expanded="true" />
@@ -329,17 +350,89 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3026">
-          <caret line="178" column="27" lean-forward="true" selection-start-line="178" selection-start-column="27" selection-end-line="178" selection-end-column="27" />
+        <state relative-caret-position="97">
+          <caret line="419" column="22" selection-start-line="419" selection-start-column="22" selection-end-line="419" selection-end-column="22" />
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>html5shiv</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>block2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>

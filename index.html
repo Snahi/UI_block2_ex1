@@ -426,7 +426,17 @@
 
         <!-- register form ----------------------------------------------------------------------------------------- -->
 
-        <form id="register_form">
+        <form id="register_form" action="javascript:register(
+                    document.getElementById('register_email').value,
+                    document.getElementById('register_password').value,
+                    document.getElementById('register_username').value,
+                    document.getElementById('register_name').value,
+                    document.getElementById('register_surname').value,
+                    document.getElementById('register_birth_date').value,
+                    document.getElementById('register_language').value,
+                    Array.from(document.getElementById('register_interests').selectedOptions).map(option => option.value),
+                    document.getElementById('register_purpose').value
+                )">
             <h2>Account information</h2>
 
             <div>
@@ -469,10 +479,10 @@
 
             <div>
                 <label for="register_interests">Interests</label>
-                <select id="register_interests" name="interests">
+                <select id="register_interests" name="interests" multiple="multiple">
                     <option value=""></option>
-                    <option value="computer science">Computer science</option>
-                    <option value="video games">Video games</option>
+                    <option value="computer_science">Computer science</option>
+                    <option value="video_games">Video games</option>
                     <option value="cooking">Cooking</option>
                 </select>
             </div>
@@ -497,8 +507,9 @@
             </div>
 
             <div>
-                <button>Save</button>
-                <button>Delete</button>
+                <button type="submit">Save</button>
+
+                <button type="reset">Delete</button>
             </div>
         </form>
 
