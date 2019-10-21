@@ -162,6 +162,7 @@ function logIn(email, password)
 function showLoginForm()
 {
     hideContentContent();
+    changeMenu("none", "inline-block");
     document.getElementById(LOGIN_FORM_ID).style.display = "flex";
 }
 
