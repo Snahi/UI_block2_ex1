@@ -1,7 +1,24 @@
+// CONST ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const ACTIVITY_GROUP_MENU_CLASS   = "group_menu";
+const GROUP_HAMBURGER_CLASS       = "group_hamburger";
+const USER_DATA_ID                = "user_data";
+const SIGNED_IN_CLASS             = "signed_in";
+const SIGNED_OUT_CLASS            = "signed_out";
+const ACTIVITIES_GROUP_CLASS      = "activities_group";
+const REGISTER_FORM_ID            = "register_form";
+const USER_DATA_SEPARATOR         = "&";
+const LOGIN_FORM_ID               = "login_form";
+const REGISTER_BIRTH_DATE_ID      = "register_birth_date";
+const GROUP_MENU_CLASS            = "group_menu";
+const USER_NAME_ID                = "user_name";
+const LIKE_ICON_NAME              = "like.png";
+const LIKE_ICON_PATH              = "images/like.png";
+const CLICKED_LIKE_ICON_PATH      = "images/like_clicked.png";
+const SHARE_POPUP_ID              = "share_popup";
+const SHARE_POPUP_ACTIVITY_DESC   = "activity_name";
+
 
 // document wide ///////////////////////////////////////////////////////////////////////////////////////////////////////
-var ACTIVITY_GROUP_MENU_CLASS   = "group_menu";
-var GROUP_HAMBURGER_CLASS       = "group_hamburger";
 
 
 function loadSite()
@@ -16,7 +33,7 @@ function hideGroupMenuPopupWhenClick()
 {
     document.onmouseup = function(e)
     {
-        var activityGroupMenus = document.getElementsByClassName(ACTIVITY_GROUP_MENU_CLASS);
+        let activityGroupMenus = document.getElementsByClassName(ACTIVITY_GROUP_MENU_CLASS);
 
         if (e.target.class !== GROUP_HAMBURGER_CLASS && e.target.class !== ACTIVITY_GROUP_MENU_CLASS)    // if clicked out of menu and hamburger
         {
@@ -31,15 +48,57 @@ function hideGroupMenuPopupWhenClick()
 
 
 
+function hideContentContent()
+{
+    // hide activities
+    let activitiesGroups = document.getElementsByClassName(ACTIVITIES_GROUP_CLASS);
+
+    for (let c = 0; c < activitiesGroups.length; c++)
+    {
+        activitiesGroups[c].style.display = "none";
+    }
+
+    // hide register form
+    document.getElementById(REGISTER_FORM_ID).style.display = "none";
+
+    // hide login form
+    document.getElementById(LOGIN_FORM_ID).style.display = "none";
+}
+
+
+
+function changeMenu(signedInDisplay, signedOutDisplay)
+{
+    // change menu
+    let menuItemsForSignedInUsers   = document.getElementsByClassName(SIGNED_IN_CLASS);
+    let menuItemsForSignedOutUsers  = document.getElementsByClassName(SIGNED_OUT_CLASS);
+    let userData                    = document.getElementById(USER_DATA_ID);
+
+    for (let i = 0; i < menuItemsForSignedInUsers.length; i++)
+    {
+        menuItemsForSignedInUsers[i].style.display = signedInDisplay;
+    }
+
+    for (let j = 0; j < menuItemsForSignedOutUsers.length; j++)
+    {
+        menuItemsForSignedOutUsers[j].style.display = signedOutDisplay;
+    }
+
+    userData.style.display = signedInDisplay;
+}
+
+
+
 // cookies /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
 function setCookie(name, value, daysTillExpire)
 {
-    var d = new Date();
+    let d = new Date();
     d.setTime(d.getTime() + (daysTillExpire * 24 * 60 * 60 * 1000));    // transform days to milliseconds
-    var expires = "expires="+ d.toUTCString();
+    let expires = "expires="+ d.toUTCString();
+
     document.cookie = name + "=" + value + ";" + expires + ";path=/";
 }
 
@@ -47,13 +106,14 @@ function setCookie(name, value, daysTillExpire)
 
 function getCookie(cookieName)
 {
-    var name            = cookieName + "=";
-    var decodedCookie   = decodeURIComponent(document.cookie);
-    var ca              = decodedCookie.split(';');
+    let name            = cookieName + "=";
+    let decodedCookie   = decodeURIComponent(document.cookie);
+    let ca              = decodedCookie.split(';');
+    let c;
 
-    for(var i = 0; i <ca.length; i++)
+    for(let i = 0; i <ca.length; i++)
     {
-        var c = ca[i];
+        c = ca[i];
         while (c.charAt(0) === ' ')
         {
             c = c.substring(1);
@@ -69,49 +129,48 @@ function getCookie(cookieName)
 
 
 // log in / out / register /////////////////////////////////////////////////////////////////////////////////////////////
-var CURRENT_USER_NICK_NAME  = "currUserNick";
-var CONTENT_ID              = "content";
-var USER_DATA_ID            = "user_data";
-var SIGNED_IN_CLASS         = "signed_in";
-var SIGNED_OUT_CLASS        = "signed_out";
-var ACTIVITIES_GROUP_CLASS  = "activities_group";
-var REGISTER_FORM_ID        = "register_form";
-var USER_DATA_SEPARATOR     = "&";
+
 
 
 function logOut()
 {
-    // hide activities
-    var activitiesGroups = document.getElementsByClassName(ACTIVITIES_GROUP_CLASS);
+    hideContentContent();
+    changeMenu("none", "inline-block")
+}
 
-    for (var c = 0; c < activitiesGroups.length; c++)
+
+function logIn(email, password)
+{
+    let user = obtainUser(email);
+
+    if (user !== null)
     {
-        activitiesGroups[c].style.display = "none";
+        if (user.password === password)
+        {
+            showSignedInUserPage(user.username);
+            return;
+        }
     }
 
-    // change menu
-    var menuItemsForSignedInUsers   = document.getElementsByClassName(SIGNED_IN_CLASS);
-    var menuItemsForSignedOutUsers  = document.getElementsByClassName(SIGNED_OUT_CLASS);
-    var userData                    = document.getElementById(USER_DATA_ID);
+    // show info about fail
+    window.alert("There is no user with such email and password");
+}
 
-    for (var i = 0; i < menuItemsForSignedInUsers.length; i++)
-    {
-        menuItemsForSignedInUsers[i].style.display = "none";
-    }
 
-    for (var j = 0; j < menuItemsForSignedOutUsers.length; j++)
-    {
-        menuItemsForSignedOutUsers[j].style.display = "inline-block";
-    }
 
-    userData.style.display = "none";
+function showLoginForm()
+{
+    hideContentContent();
+    document.getElementById(LOGIN_FORM_ID).style.display = "flex";
 }
 
 
 
 function showRegisterForm()
 {
-    var registerForm = document.getElementById(REGISTER_FORM_ID);
+    hideContentContent();
+
+    let registerForm = document.getElementById(REGISTER_FORM_ID);
 
     registerForm.style.display = "flex";
 }
@@ -126,6 +185,7 @@ function register(email, password, username, name, surname, birthDate, language,
     {
         storeUser(email, password, username, name, surname, birthDate, language, interests, purpose);
         window.alert("account created");
+        showLoginForm();
     }
     else
     {
@@ -134,10 +194,20 @@ function register(email, password, username, name, surname, birthDate, language,
 }
 
 
+function validateBirthDate(birthDate)
+{
+    if (new Date(birthDate) >= new Date())
+    {
+        window.alert("we do not allow creation of account for people not yet born. Enter proper date");
+        document.getElementById(REGISTER_BIRTH_DATE_ID).value = "";
+    }
+}
+
+
 
 function storeUser(email, password, username, name, surname, birthDate, language, interests, purpose)
 {
-    var userCookie = email + USER_DATA_SEPARATOR + password + USER_DATA_SEPARATOR + username + USER_DATA_SEPARATOR +
+    let userCookie = email + USER_DATA_SEPARATOR + password + USER_DATA_SEPARATOR + username + USER_DATA_SEPARATOR +
         name + USER_DATA_SEPARATOR + surname + USER_DATA_SEPARATOR + birthDate + USER_DATA_SEPARATOR + language +
         USER_DATA_SEPARATOR + interests + USER_DATA_SEPARATOR + purpose;
 
@@ -148,12 +218,12 @@ function storeUser(email, password, username, name, surname, birthDate, language
 
 function obtainUser(email)
 {
-    var userCookie  = getCookie(email);
-    var user        = null;
+    let userCookie  = getCookie(email);
+    let user        = null;
 
     if (userCookie !== "")
     {
-        var userData = userCookie.split(USER_DATA_SEPARATOR);
+        let userData = userCookie.split(USER_DATA_SEPARATOR);
         user = {
             email:      userData[0],
             password:   userData[1],
@@ -173,13 +243,33 @@ function obtainUser(email)
 
 
 // activity group //////////////////////////////////////////////////////////////////////////////////////////////////////
-var GROUP_MENU_CLASS = "group_menu";
+
+
+
+
+function showSignedInUserPage(username)
+{
+    hideContentContent();
+
+    let activitiesGroups = document.getElementsByClassName(ACTIVITIES_GROUP_CLASS);
+
+    for (let c = 0; c < activitiesGroups.length; c++)
+    {
+        activitiesGroups[c].style.display = "flex";
+    }
+
+    // change menu
+    changeMenu("inline-block", "none");
+
+    // show user username in menu
+    document.getElementById(USER_NAME_ID).textContent = username;
+}
 
 
 
 function showGroupMenu(activity)
 {
-    var menu = activity.getElementsByClassName(GROUP_MENU_CLASS)[0];
+    let menu = activity.getElementsByClassName(GROUP_MENU_CLASS)[0];
 
     menu.style.display = "block";
 }
@@ -202,19 +292,14 @@ function archiveActivityGroup(activityGroup)
 
 
 // activity ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// const
-var LIKE_ICON_NAME              = "like.png";
-var LIKE_ICON_PATH              = "images/like.png";
-var CLICKED_LIKE_ICON_PATH      = "images/like_clicked.png";
-var SHARE_POPUP_ID              = "share_popup";
-var SHARE_POPUP_ACTIVITY_DESC   = "activity_name";
+
 
 
 function fitFontSizeForActivities()
 {
-    var activities = document.getElementsByClassName("activity");
+    let activities = document.getElementsByClassName("activity");
 
-    var i;
+    let i;
     for (i = 0; i < activities.length; i++)
     {
         fitFontSizeForActivity(
@@ -235,11 +320,11 @@ function fitFontSizeForActivity(text, image)
     }
 
     text.style.fontSize = "10px";
-    var textHeight  = getElementHeight(text);
-    var imageHeight = getElementHeight(image);
+    let textHeight  = getElementHeight(text);
+    let imageHeight = getElementHeight(image);
 
-    var fontSizeStr = window.getComputedStyle(text, null).fontSize;
-    var fontSize    = parseInt(fontSizeStr.substring(0, fontSizeStr.length - 2), 10);
+    let fontSizeStr = window.getComputedStyle(text, null).fontSize;
+    let fontSize    = parseInt(fontSizeStr.substring(0, fontSizeStr.length - 2), 10);
 
     while (textHeight < imageHeight)
     {
@@ -265,9 +350,9 @@ function fitFontSizeForActivity(text, image)
 
 function isMultiLine(text)
 {
-    var textStyle       = window.getComputedStyle(text);
-    var lineHeightStr   = textStyle.lineHeight;
-    var lineHeight      = lineHeightStr.substr(0, lineHeightStr.length - 2);
+    let textStyle       = window.getComputedStyle(text);
+    let lineHeightStr   = textStyle.lineHeight;
+    let lineHeight      = lineHeightStr.substr(0, lineHeightStr.length - 2);
 
     return getElementHeight(text) / lineHeight > 1;
 }
@@ -276,8 +361,8 @@ function isMultiLine(text)
 
 function getElementHeight(element)
 {
-    var elementComputedStyle = window.getComputedStyle(element);
-    var elementHeightStr     = elementComputedStyle.height;
+    let elementComputedStyle = window.getComputedStyle(element);
+    let elementHeightStr     = elementComputedStyle.height;
 
     return parseInt(
         elementHeightStr.substring(0, elementHeightStr.length - 2),
@@ -289,9 +374,9 @@ function getElementHeight(element)
 
 function closeActivity(activityToClose)
 {
-    var dialog  = document.getElementById("confirm_activity_delete_popup");
-    var butYes  = document.getElementById("yes_button");
-    var butNo   = document.getElementById("no_button");
+    let dialog  = document.getElementById("confirm_activity_delete_popup");
+    let butYes  = document.getElementById("yes_button");
+    let butNo   = document.getElementById("no_button");
 
     dialog.style.display = "flex";
 
@@ -326,8 +411,8 @@ function getDeleteActivityFunction(activityToClose)
 
 function onLikeClicked(likeImg)
 {
-    var splitPath    = likeImg.src.split("/");
-    var imgName         = splitPath[splitPath.length - 1];
+    let splitPath    = likeImg.src.split("/");
+    let imgName         = splitPath[splitPath.length - 1];
 
     if (imgName === LIKE_ICON_NAME)
     {
@@ -343,11 +428,11 @@ function onLikeClicked(likeImg)
 
 function onShareClicked(activity)
 {
-    var text = activity.getElementsByClassName("activity_description")[0].textContent;
+    let text = activity.getElementsByClassName("activity_description")[0].textContent;
 
-    var sharePopup = document.getElementById(SHARE_POPUP_ID);
+    let sharePopup = document.getElementById(SHARE_POPUP_ID);
     sharePopup.style.display = "flex";
-    var popupText = document.getElementById(SHARE_POPUP_ACTIVITY_DESC);
+    let popupText = document.getElementById(SHARE_POPUP_ACTIVITY_DESC);
     popupText.innerHTML = text;
 }
 
@@ -355,10 +440,6 @@ function onShareClicked(activity)
 
 function closeSharePopup()
 {
-    var sharePopup = document.getElementById(SHARE_POPUP_ID);
+    let sharePopup = document.getElementById(SHARE_POPUP_ID);
     sharePopup.style.display = "none";
 }
-
-
-
-// general /////////////////////////////////////////////////////////////////////////////////////////////////////////////

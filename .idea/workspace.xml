@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/index_script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index_script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/index_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/index_style.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="419" column="22" selection-start-line="419" selection-start-column="22" selection-end-line="419" selection-end-column="22" />
+            <state relative-caret-position="369">
+              <caret line="476" column="27" selection-start-line="476" selection-start-column="27" selection-end-line="476" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -27,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style/index_style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1977">
-              <caret line="76" selection-start-line="76" selection-end-line="76" />
+            <state relative-caret-position="265">
+              <caret line="564" lean-forward="true" selection-start-line="564" selection-end-line="564" />
             </state>
           </provider>
         </entry>
@@ -36,17 +37,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/index_script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="122" column="28" selection-start-line="122" selection-start-column="28" selection-end-line="122" selection-end-column="28" />
+            <state relative-caret-position="34">
+              <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
               <folding>
                 <element signature="n#!!block;n#loadSite#0" expanded="true" />
                 <element signature="n#!!block;n#hideGroupMenuPopupWhenClick#0" expanded="true" />
                 <element signature="e#401#836#0" expanded="true" />
+                <element signature="n#!!block;n#hideContentContent#0" expanded="true" />
+                <element signature="n#!!block;n#changeMenu#0" expanded="true" />
                 <element signature="n#!!block;n#setCookie#0" expanded="true" />
                 <element signature="n#!!block;n#getCookie#0" expanded="true" />
+                <element signature="e#3423#3491#0" expanded="true" />
+                <element signature="n#!!block;n#logIn#0" expanded="true" />
+                <element signature="n#!!block;n#showLoginForm#0" expanded="true" />
                 <element signature="n#!!block;n#showRegisterForm#0" expanded="true" />
+                <element signature="n#!!block;n#register#0" expanded="true" />
+                <element signature="e#4573#4581#0" expanded="true" />
                 <element signature="n#!!block;n#storeUser#0" expanded="true" />
                 <element signature="n#!!block;n#obtainUser#0" expanded="true" />
+                <element signature="n#!!block;n#showSignedInUserPage#0" expanded="true" />
                 <element signature="n#!!block;n#showGroupMenu#0" expanded="true" />
                 <element signature="n#!!block;n#archiveActivityGroup#0" expanded="true" />
                 <element signature="n#!!block;n#fitFontSizeForActivities#0" expanded="true" />
@@ -54,7 +63,9 @@
                 <element signature="n#!!block;n#isMultiLine#0" expanded="true" />
                 <element signature="n#!!block;n#getElementHeight#0" expanded="true" />
                 <element signature="n#!!block;n#closeActivity#0" expanded="true" />
+                <element signature="e#8204#8304#0" expanded="true" />
                 <element signature="n#!!block;n#getDeleteActivityFunction#0" expanded="true" />
+                <element signature="e#8458#8876#0" expanded="true" />
                 <element signature="n#!!block;n#onLikeClicked#0" expanded="true" />
                 <element signature="n#!!block;n#onShareClicked#0" expanded="true" />
                 <element signature="n#!!block;n#closeSharePopup#0" expanded="true" />
@@ -97,8 +108,8 @@
       <list>
         <option value="$PROJECT_DIR$/script/index_script.js" />
         <option value="$PROJECT_DIR$/style/index_style.css" />
-        <option value="$PROJECT_DIR$/scripts/index_script.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/scripts/index_script.js" />
       </list>
     </option>
   </component>
@@ -120,6 +131,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -146,7 +158,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -154,7 +165,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571650605724" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571650636938" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -217,7 +228,8 @@
       <workItem from="1571600990456" duration="10968000" />
       <workItem from="1571615681977" duration="1584000" />
       <workItem from="1571617314735" duration="17000" />
-      <workItem from="1571645575755" duration="4955000" />
+      <workItem from="1571645575755" duration="5031000" />
+      <workItem from="1571665080294" duration="6289000" />
     </task>
     <task id="LOCAL-00001" summary="- delete activity complete">
       <created>1570740317456</created>
@@ -254,17 +266,24 @@
       <option name="project" value="LOCAL" />
       <updated>1571616768989</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="- register functionality added">
+      <created>1571650655156</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1571650655156</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77392000" />
+    <option name="totallyTimeSpent" value="83757000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16510066" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1671141" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -303,7 +322,8 @@
     <MESSAGE value="- exercise 1 done, although some minor changes may be done, like ... if text is too long" />
     <MESSAGE value="- exercise 1 done" />
     <MESSAGE value="- form frontend done" />
-    <option name="LAST_COMMIT_MESSAGE" value="- form frontend done" />
+    <MESSAGE value="- register functionality added" />
+    <option name="LAST_COMMIT_MESSAGE" value="- register functionality added" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://D:/Documents/websites/www.janniemczyk.pl/v3/main/main_style.css">
@@ -315,24 +335,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/style/index_style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1977">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        <state relative-caret-position="265">
+          <caret line="564" lean-forward="true" selection-start-line="564" selection-end-line="564" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/index_script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="122" column="28" selection-start-line="122" selection-start-column="28" selection-end-line="122" selection-end-column="28" />
+        <state relative-caret-position="34">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
           <folding>
             <element signature="n#!!block;n#loadSite#0" expanded="true" />
             <element signature="n#!!block;n#hideGroupMenuPopupWhenClick#0" expanded="true" />
             <element signature="e#401#836#0" expanded="true" />
+            <element signature="n#!!block;n#hideContentContent#0" expanded="true" />
+            <element signature="n#!!block;n#changeMenu#0" expanded="true" />
             <element signature="n#!!block;n#setCookie#0" expanded="true" />
             <element signature="n#!!block;n#getCookie#0" expanded="true" />
+            <element signature="e#3423#3491#0" expanded="true" />
+            <element signature="n#!!block;n#logIn#0" expanded="true" />
+            <element signature="n#!!block;n#showLoginForm#0" expanded="true" />
             <element signature="n#!!block;n#showRegisterForm#0" expanded="true" />
+            <element signature="n#!!block;n#register#0" expanded="true" />
+            <element signature="e#4573#4581#0" expanded="true" />
             <element signature="n#!!block;n#storeUser#0" expanded="true" />
             <element signature="n#!!block;n#obtainUser#0" expanded="true" />
+            <element signature="n#!!block;n#showSignedInUserPage#0" expanded="true" />
             <element signature="n#!!block;n#showGroupMenu#0" expanded="true" />
             <element signature="n#!!block;n#archiveActivityGroup#0" expanded="true" />
             <element signature="n#!!block;n#fitFontSizeForActivities#0" expanded="true" />
@@ -340,7 +368,9 @@
             <element signature="n#!!block;n#isMultiLine#0" expanded="true" />
             <element signature="n#!!block;n#getElementHeight#0" expanded="true" />
             <element signature="n#!!block;n#closeActivity#0" expanded="true" />
+            <element signature="e#8204#8304#0" expanded="true" />
             <element signature="n#!!block;n#getDeleteActivityFunction#0" expanded="true" />
+            <element signature="e#8458#8876#0" expanded="true" />
             <element signature="n#!!block;n#onLikeClicked#0" expanded="true" />
             <element signature="n#!!block;n#onShareClicked#0" expanded="true" />
             <element signature="n#!!block;n#closeSharePopup#0" expanded="true" />
@@ -350,8 +380,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="419" column="22" selection-start-line="419" selection-start-column="22" selection-end-line="419" selection-end-column="22" />
+        <state relative-caret-position="369">
+          <caret line="476" column="27" selection-start-line="476" selection-start-column="27" selection-end-line="476" selection-end-column="46" />
         </state>
       </provider>
     </entry>

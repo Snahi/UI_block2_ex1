@@ -14,14 +14,18 @@
     --color-5:                      #f0f3bd;
     --color-6:                      rgba(235, 236, 240, 0.7);
     --color-7:                      white;
-    --yes-no-button-color-1:           rgb(70,130,180);
-    --yes-no-button-color-2:           rgb(80,155,200);
-    --yes-no-button-side-color:        rgb(40, 100, 140);
-    --yes-no-button-border-color:      rgb(45, 104, 152);
-    --register-form-but-border-color:  rgb(45, 104, 152);
-    --register-form-but-side-color:    rgb(40, 100, 140);
+    --yes-no-button-color-1:            rgb(70,130,180);
+    --yes-no-button-color-2:            rgb(80,155,200);
+    --yes-no-button-side-color:         rgb(40, 100, 140);
+    --yes-no-button-border-color:       rgb(45, 104, 152);
+    --register-form-but-border-color:   rgb(45, 104, 152);
+    --register-form-but-side-color:     rgb(40, 100, 140);
     --register-form-but-color-1:        rgb(70,130,180);
-    --register-form-but-color-2:       rgb(80,155,200);
+    --register-form-but-color-2:        rgb(80,155,200);
+    --login-form-but-border-color:      rgb(45, 104, 152);
+    --login-form-but-side-color:        rgb(40, 100, 140);
+    --login-form-but-color-1:           rgb(70,130,180);
+    --login-form-but-color-2:           rgb(80,155,200);
 
     /* dimensions */
     --header-height:                    50px;
@@ -74,6 +78,16 @@
     --register-form-but-border-radius:  var(--popup-border-radius);
     --register-form-but-side-height:    3px;
     --register-form-but-text-shadow:    0 -1px 0 rgba(0,0,0,0.5);
+    --register-form-but-clicked-side-height: 1px;
+    --login-form-width:                 50vw;
+    --login-form-input-width:           250px;
+    --login-form-input-height:          30px;
+    --login-form-button-width:          100px;
+    --login-form-button-height:         50px;
+    --login-form-but-border-radius:     var(--popup-border-radius);
+    --login-form-but-side-height:       3px;
+    --login-form-but-text-shadow:       0 -1px 0 rgba(0,0,0,0.5);
+    --login-form-but-clicked-side-height: 1px;
 
     font-family: "Comic Sans MS", cursive, sans-serif;
 }
@@ -547,6 +561,77 @@ body {
 #register_form button:hover {
     box-shadow:             0 var(--register-form-but-side-height) 0 var(--register-form-but-side-color),
                             0 0 calc(2 * var(--register-form-but-side-height)) gray;
+}
+
+
+#register_form button:active {
+    position:               relative;
+    top:                    calc(var(--register-form-but-side-height) - var(--register-form-but-clicked-side-height));
+    box-shadow:             0 var(--register-form-but-clicked-side-height) 0 var(--register-form-but-side-color);
+}
+
+
+/* login /////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+#login_form {
+    display:                none;
+    flex-direction:         column;
+    align-items:            center;
+    width:                  var(--login-form-width);
+    background-color:       var(--color-7);
+    margin:                 0 auto;
+    padding:                30px;
+    border-radius:          var(--activity-border-radius);
+    box-shadow:             0 0 5px black;
+}
+
+
+#login_form input {
+    border:                 none;
+    border-bottom:          2px solid var(--color-4);
+    width:                  var(--login-form-input-width);
+    height:                 var(--login-form-input-height);
+}
+
+
+#login_form>div {
+    margin:                 10px 0;
+}
+
+
+#login_form label {
+    display:                block;
+    text-align:             start;
+}
+
+
+#login_button {
+    width:                  var(--login-form-button-width);
+    height:                 var(--login-form-button-height);
+    border:                 1px solid var(--login-form-but-border-color);
+    border-radius:          var(--login-form-but-border-radius);
+    background-image:       linear-gradient(0deg, var(--login-form-but-color-1) 0%, var(--login-form-but-color-2) 100%);
+    text-shadow:            var(--login-form-but-text-shadow);
+    box-shadow:             0 var(--login-form-but-side-height) 0 var(--login-form-but-side-color),
+                            0 0 var(--login-form-but-side-height) gray;
+    color:                  var(--color-7);
+    font-size:              16px;
+    font-weight:            bold;
+    margin:                 10px;
+}
+
+
+#login_form button:hover {
+    box-shadow:             0 var(--login-form-but-side-height) 0 var(--login-form-but-side-color),
+                            0 0 calc(2 * var(--login-form-but-side-height)) gray;
+}
+
+
+#login_form button:active {
+    position:               relative;
+    top:                    calc(var(--login-form-but-side-height) - var(--login-form-but-clicked-side-height));
+    box-shadow:             0 var(--login-form-but-clicked-side-height) 0 var(--login-form-but-side-color);
 }
 
 

@@ -27,7 +27,7 @@
                 <li><a class="signed_in" href="#">Help</a></li>
                 <li><a class="signed_in" href="#">About</a></li>
                 <li><a class="signed_in" href="#" onclick="logOut()">Log out</a></li>
-                <li><a class="signed_out" href="#">Log in</a></li>
+                <li><a class="signed_out" href="#" onclick="showLoginForm()">Log in</a></li>
                 <li><a class="signed_out" href="#" onclick="showRegisterForm()">Register</a></li>
             </ul>
         </nav>
@@ -474,7 +474,8 @@
 
             <div>
                 <label for="register_birth_date">Birth date</label>
-                <input id="register_birth_date" type="date" name="birth_date" required/>
+                <input id="register_birth_date" type="date" name="birth_date"
+                       onblur="validateBirthDate(document.getElementById('register_birth_date').value)" required/>
             </div>
 
             <div>
@@ -511,6 +512,28 @@
 
                 <button type="reset">Delete</button>
             </div>
+        </form> <!-- /register form -->
+
+
+        <!-- login form -------------------------------------------------------------------------------------------- -->
+        <form id="login_form" action="javascript:logIn(
+                        document.getElementById('login_email').value,
+                        document.getElementById('login_password').value
+            )">
+
+            <div>
+                <label for="login_email">email</label>
+                <input id="login_email" type="email" placeholder="i.e. name@domain.com"
+                       pattern="^[a-zA-Z0-9.]{1,64}@[a-zA-Z0-0.]{1,254}$" required/>
+            </div>
+
+            <div>
+                <label for="login_password">password</label>
+                <input id="login_password" type="password" placeholder="password" required/>
+            </div>
+
+            <button id="login_button" type="submit">Login</button>
+
         </form>
 
     </section> <!-- /content -->
