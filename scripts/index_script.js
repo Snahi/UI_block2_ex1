@@ -25,6 +25,7 @@ function loadSite()
 {
     fitFontSizeForActivities();
     hideGroupMenuPopupWhenClick();
+    showLoginForm();
 }
 
 
