@@ -18,19 +18,12 @@
         <img id="logo" src="images/logo.png" alt="logo" />
         <h1 id="title">Planner</h1>
 
-        <div id="user_data">
-            <span id="user_name">Username</span>
-            <img id="user_photo" src="images/default_user_image.png" alt="userPhoto"/>
-        </div>
-
         <!-- site navigation --------------------------------------------------------------------------------------- -->
         <nav id="site_navigation">
             <ul>
-                <li><a class="signed_in" href="#">Help</a></li>
-                <li><a class="signed_in" href="#">About</a></li>
-                <li><a class="signed_in" href="#" onclick="logOut()">Log out</a></li>
-                <li><a class="signed_out" href="#" onclick="showLoginForm()">Log in</a></li>
-                <li><a class="signed_out" href="#" onclick="showRegisterForm()">Register</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Log out</a></li>
             </ul>
         </nav>
 
@@ -424,119 +417,6 @@
             </article>
 
         </div> <!-- /group 3 -->
-
-
-        <!-- register form ----------------------------------------------------------------------------------------- -->
-
-        <form id="register_form" action="javascript:register(
-                    document.getElementById('register_email').value,
-                    document.getElementById('register_password').value,
-                    document.getElementById('register_username').value,
-                    document.getElementById('register_name').value,
-                    document.getElementById('register_surname').value,
-                    document.getElementById('register_birth_date').value,
-                    document.getElementById('register_language').value,
-                    Array.from(document.getElementById('register_interests').selectedOptions).map(option => option.value),
-                    document.getElementById('register_purpose').value
-                )">
-            <h2>Account information</h2>
-
-            <div>
-                <label for="register_username">Username</label>
-                <input id="register_username" type="text" name="username" placeholder="4 - 10 characters, letters and digits"
-                       pattern="^[a-zA-Z0-9]{4,10}$" required/>
-            </div>
-
-            <div>
-                <label for="register_password">Password</label>
-                <input id="register_password" type="password" name="password"
-                       placeholder="6 - 8 characters, digits and small letters"
-                       pattern="^[a-z0-9]{6,8}$" required/>
-            </div>
-
-            <h2>Personal information</h2>
-
-            <div>
-                <label for="register_name">Name</label>
-                <input id="register_name" type="text" name="name" placeholder="2 - 30 letters"
-                       pattern="^[a-zA-Z]{2,30}$" required/>
-            </div>
-
-            <div>
-                <label for="register_surname">Surname</label>
-                <input id="register_surname" type="text" name="surname" placeholder="2 - 30 letters"
-                       pattern="^[a-zA-Z]{2,30}$" required/>
-            </div>
-
-            <div>
-                <label for="register_email">Email</label>
-                <input id="register_email" type="email" name="email" placeholder="i.e. name@domain.com"
-                       pattern="^[a-zA-Z0-9.]{1,64}@[a-zA-Z0-0.]{1,254}$" required/>
-            </div>
-
-            <div>
-                <label for="register_birth_date">Birth date</label>
-                <input id="register_birth_date" type="date" name="birth_date"
-                       onblur="validateBirthDate(document.getElementById('register_birth_date').value)" required/>
-            </div>
-
-            <div>
-                <label for="register_interests">Interests</label>
-                <select id="register_interests" name="interests" multiple="multiple">
-                    <option value=""></option>
-                    <option value="computer_science">Computer science</option>
-                    <option value="video_games">Video games</option>
-                    <option value="cooking">Cooking</option>
-                </select>
-            </div>
-
-            <div>
-                <label for="register_language">Language</label>
-                <select id="register_language" name="language">
-                    <option value="english">English</option>
-                    <option value="spanish">Spanish</option>
-                </select>
-            </div>
-
-            <div>
-                <label for="register_purpose">Purpose</label>
-                <input id="register_purpose" type="text" name="purpose" placeholder="i.e. work"
-                    pattern="^[a-zA-Z0-9,.]{0,50}$"/>
-            </div>
-
-            <div>
-                <input id="register_accept_terms" type="checkbox" value="accept" required/>
-                <label for="register_accept_terms">I have read and accept the <a href="#">Terms of Use</a></label>
-            </div>
-
-            <div>
-                <button type="submit">Save</button>
-
-                <button type="reset">Delete</button>
-            </div>
-        </form> <!-- /register form -->
-
-
-        <!-- login form -------------------------------------------------------------------------------------------- -->
-        <form id="login_form" action="javascript:logIn(
-                        document.getElementById('login_email').value,
-                        document.getElementById('login_password').value
-            )">
-
-            <div>
-                <label for="login_email">email</label>
-                <input id="login_email" type="email" placeholder="i.e. name@domain.com"
-                       pattern="^[a-zA-Z0-9.]{1,64}@[a-zA-Z0-0.]{1,254}$" required/>
-            </div>
-
-            <div>
-                <label for="login_password">password</label>
-                <input id="login_password" type="password" placeholder="password" required/>
-            </div>
-
-            <button id="login_button" type="submit">Login</button>
-
-        </form>
 
     </section> <!-- /content -->
 
