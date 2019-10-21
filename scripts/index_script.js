@@ -1,7 +1,7 @@
 
 // document wide ///////////////////////////////////////////////////////////////////////////////////////////////////////
-var ACTIVITY_GROUP_CLASS    = "group_menu";
-var GROUP_HAMBURGER_CLASS   = "group_hamburger";
+var ACTIVITY_GROUP_MENU_CLASS   = "group_menu";
+var GROUP_HAMBURGER_CLASS       = "group_hamburger";
 
 
 function loadSite()
@@ -16,9 +16,9 @@ function hideGroupMenuPopupWhenClick()
 {
     document.onmouseup = function(e)
     {
-        var activityGroupMenus = document.getElementsByClassName(ACTIVITY_GROUP_CLASS);
+        var activityGroupMenus = document.getElementsByClassName(ACTIVITY_GROUP_MENU_CLASS);
 
-        if (e.target.class !== GROUP_HAMBURGER_CLASS && e.target.class !== ACTIVITY_GROUP_CLASS)    // if clicked out of menu and hamburger
+        if (e.target.class !== GROUP_HAMBURGER_CLASS && e.target.class !== ACTIVITY_GROUP_MENU_CLASS)    // if clicked out of menu and hamburger
         {
             var i;
             for (i = 0; i < activityGroupMenus.length; i++)
@@ -64,6 +64,55 @@ function getCookie(cookieName)
         }
     }
     return "";
+}
+
+
+
+// log in / out ////////////////////////////////////////////////////////////////////////////////////////////////////////
+var CURRENT_USER_NICK_NAME  = "currUserNick";
+var CONTENT_ID              = "content";
+var USER_DATA_ID            = "user_data";
+var SIGNED_IN_CLASS         = "signed_in";
+var SIGNED_OUT_CLASS        = "signed_out";
+var ACTIVITIES_GROUP_CLASS  = "activities_group";
+var REGISTER_FORM_ID        = "register_form";
+
+
+function logOut()
+{
+    // hide activities
+    var activitiesGroups = document.getElementsByClassName(ACTIVITIES_GROUP_CLASS);
+
+    for (var c = 0; c < activitiesGroups.length; c++)
+    {
+        activitiesGroups[c].style.display = "none";
+    }
+
+    // change menu
+    var menuItemsForSignedInUsers   = document.getElementsByClassName(SIGNED_IN_CLASS);
+    var menuItemsForSignedOutUsers  = document.getElementsByClassName(SIGNED_OUT_CLASS);
+    var userData                    = document.getElementById(USER_DATA_ID);
+
+    for (var i = 0; i < menuItemsForSignedInUsers.length; i++)
+    {
+        menuItemsForSignedInUsers[i].style.display = "none";
+    }
+
+    for (var j = 0; j < menuItemsForSignedOutUsers.length; j++)
+    {
+        menuItemsForSignedOutUsers[j].style.display = "inline-block";
+    }
+
+    userData.style.display = "none";
+}
+
+
+
+function showRegisterForm()
+{
+    var registerForm = document.getElementById(REGISTER_FORM_ID);
+
+    registerForm.style.display = "flex";
 }
 
 

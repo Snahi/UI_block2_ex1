@@ -18,6 +18,10 @@
     --yes-no-button-color-2:           rgb(80,155,200);
     --yes-no-button-side-color:        rgb(40, 100, 140);
     --yes-no-button-border-color:      rgb(45, 104, 152);
+    --register-form-but-border-color:  rgb(45, 104, 152);
+    --register-form-but-side-color:    rgb(40, 100, 140);
+    --register-form-but-color-1:        rgb(70,130,180);
+    --register-form-but-color-2:       rgb(80,155,200);
 
     /* dimensions */
     --header-height:                    50px;
@@ -62,6 +66,14 @@
     --group-menu-item-height:           30px;
     --group-menu-item-padding:          10px;
     --footer-height:                    100px;
+    --register-form-width:              50vw;
+    --register-form-label-width:        80px;
+    --register-form-input-width:        300px;
+    --register-form-button-width:       100px;
+    --register-form-button-height:      50px;
+    --register-form-but-border-radius:  var(--popup-border-radius);
+    --register-form-but-side-height:    3px;
+    --register-form-but-text-shadow:    0 -1px 0 rgba(0,0,0,0.5);
 
     font-family: "Comic Sans MS", cursive, sans-serif;
 }
@@ -116,7 +128,6 @@ body {
 
 
 #site_navigation>ul>li>a {
-    display:                inline-block;
     width:                  var(--site-nav-item-width);
     height:                 var(--site-nav-item-height);
     line-height:            var(--header-height);
@@ -137,6 +148,42 @@ body {
     to {
         background-color:   var(--color-1-1);
     }
+}
+
+
+.signed_in {
+    display:                inline-block;
+}
+
+
+.signed_out {
+    display:                none;
+}
+
+
+#user_data {
+    float:                  right;
+    height:                 var(--header-height);
+    background-color:       var(--color-4);
+    padding-left:           7px;
+}
+
+
+#user_name {
+    display:                inline-block;
+    height:                 var(--header-height);
+    line-height:            var(--header-height);
+    color:                  var(--color-1);
+}
+
+
+#user_photo {
+    float:                  right;
+    height:                 100%;
+    width:                  auto;
+    padding:                4px;
+    margin-right:           5px;
+    margin-left:            5px;
 }
 
 
@@ -434,6 +481,72 @@ body {
     bottom:                 0;
     right:                  calc(2 * var(--activity-padding));  /* because whole bottom panel is moved by
                             var(--activity-padding), then to maintain the same padding on right I must multiply it by 2 */
+}
+
+
+/* register form /////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+#register_form {
+    display:                none;
+    flex-direction:         column;
+    align-items:            center;
+    width:                  var(--register-form-width);
+    background-color:       var(--color-7);
+    margin:                 0 auto;
+    padding:                30px;
+    border-radius:          var(--activity-border-radius);
+    box-shadow:             0 0 5px black;
+}
+
+
+#register_form label:not(:last-child){
+    display:                inline-block;
+    width:                  var(--register-form-label-width);
+    text-align:             start;
+}
+
+
+#register_form input:not(#register_accept_terms), #register_form select {
+    width:                  var(--register-form-input-width);
+}
+
+
+#register_form>div {
+    margin:                 10px 0;
+}
+
+
+#register_form>h2 {
+    margin:                 10px 0;
+}
+
+
+#register_form input {
+    border:                 none;
+    border-bottom:          2px solid var(--color-4);
+}
+
+
+#register_form button {
+    width:                  var(--register-form-button-width);
+    height:                 var(--register-form-button-height);
+    border:                 1px solid var(--register-form-but-border-color);
+    border-radius:          var(--register-form-but-border-radius);
+    background-image:       linear-gradient(0deg, var(--register-form-but-color-1) 0%, var(--register-form-but-color-2) 100%);
+    text-shadow:            var(--register-form-but-text-shadow);
+    box-shadow:             0 var(--register-form-but-side-height) 0 var(--register-form-but-side-color),
+                            0 0 var(--register-form-but-side-height) gray;
+    color:                  var(--color-7);
+    font-size:              16px;
+    font-weight:            bold;
+    margin:                 10px;
+}
+
+
+#register_form button:hover {
+    box-shadow:             0 var(--register-form-but-side-height) 0 var(--register-form-but-side-color),
+                            0 0 calc(2 * var(--register-form-but-side-height)) gray;
 }
 
 
