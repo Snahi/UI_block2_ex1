@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="be43df3b-2741-4c6e-92cf-b36c9eccf2eb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/index_script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index_script.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="461" lean-forward="true" selection-start-line="461" selection-end-line="461" />
+            <state relative-caret-position="408">
+              <caret line="42" column="36" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -25,32 +27,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style/index_style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="564" lean-forward="true" selection-start-line="564" selection-end-line="564" />
+            <state relative-caret-position="9588">
+              <caret line="564" selection-start-line="564" selection-end-line="564" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/index_script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="163" column="25" lean-forward="true" selection-start-line="163" selection-start-column="25" selection-end-line="163" selection-end-column="25" />
+            <state relative-caret-position="391">
+              <caret line="256" lean-forward="true" selection-start-line="256" selection-end-line="256" />
               <folding>
                 <element signature="n#!!block;n#loadSite#0" expanded="true" />
                 <element signature="n#!!block;n#hideGroupMenuPopupWhenClick#0" expanded="true" />
-                <element signature="e#401#836#0" expanded="true" />
                 <element signature="n#!!block;n#hideContentContent#0" expanded="true" />
                 <element signature="n#!!block;n#changeMenu#0" expanded="true" />
                 <element signature="n#!!block;n#setCookie#0" expanded="true" />
                 <element signature="n#!!block;n#getCookie#0" expanded="true" />
-                <element signature="e#3423#3491#0" expanded="true" />
                 <element signature="n#!!block;n#logIn#0" expanded="true" />
+                <element signature="n#!!block;n#showLoginForm#0" expanded="true" />
                 <element signature="n#!!block;n#showRegisterForm#0" expanded="true" />
                 <element signature="n#!!block;n#register#0" expanded="true" />
-                <element signature="e#4573#4581#0" expanded="true" />
                 <element signature="n#!!block;n#storeUser#0" expanded="true" />
                 <element signature="n#!!block;n#obtainUser#0" expanded="true" />
+                <element signature="e#6616#6624#0" expanded="true" />
                 <element signature="n#!!block;n#showSignedInUserPage#0" expanded="true" />
                 <element signature="n#!!block;n#showGroupMenu#0" expanded="true" />
                 <element signature="n#!!block;n#archiveActivityGroup#0" expanded="true" />
@@ -59,9 +60,7 @@
                 <element signature="n#!!block;n#isMultiLine#0" expanded="true" />
                 <element signature="n#!!block;n#getElementHeight#0" expanded="true" />
                 <element signature="n#!!block;n#closeActivity#0" expanded="true" />
-                <element signature="e#8204#8304#0" expanded="true" />
                 <element signature="n#!!block;n#getDeleteActivityFunction#0" expanded="true" />
-                <element signature="e#8458#8876#0" expanded="true" />
                 <element signature="n#!!block;n#onLikeClicked#0" expanded="true" />
                 <element signature="n#!!block;n#onShareClicked#0" expanded="true" />
                 <element signature="n#!!block;n#closeSharePopup#0" expanded="true" />
@@ -94,6 +93,7 @@
       <find>activities_group_header</find>
       <find>user_data</find>
       <find>ACTIVITY_GROUP_CLASS</find>
+      <find>logout</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -116,9 +116,9 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="1235" />
-    <option name="height" value="1040" />
+    <option name="x" value="-9" />
+    <option name="width" value="978" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -126,8 +126,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -154,6 +152,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -225,7 +225,8 @@
       <workItem from="1571615681977" duration="1584000" />
       <workItem from="1571617314735" duration="17000" />
       <workItem from="1571645575755" duration="5031000" />
-      <workItem from="1571665080294" duration="7544000" />
+      <workItem from="1571665080294" duration="9142000" />
+      <workItem from="1571682486036" duration="724000" />
     </task>
     <task id="LOCAL-00001" summary="- delete activity complete">
       <created>1570740317456</created>
@@ -280,13 +281,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85012000" />
+    <option name="totallyTimeSpent" value="87334000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1671141" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16912752" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -339,37 +340,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/style/index_style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="564" lean-forward="true" selection-start-line="564" selection-end-line="564" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="461" lean-forward="true" selection-start-line="461" selection-end-line="461" />
+        <state relative-caret-position="9588">
+          <caret line="564" selection-start-line="564" selection-end-line="564" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/index_script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="163" column="25" lean-forward="true" selection-start-line="163" selection-start-column="25" selection-end-line="163" selection-end-column="25" />
+        <state relative-caret-position="391">
+          <caret line="256" lean-forward="true" selection-start-line="256" selection-end-line="256" />
           <folding>
             <element signature="n#!!block;n#loadSite#0" expanded="true" />
             <element signature="n#!!block;n#hideGroupMenuPopupWhenClick#0" expanded="true" />
-            <element signature="e#401#836#0" expanded="true" />
             <element signature="n#!!block;n#hideContentContent#0" expanded="true" />
             <element signature="n#!!block;n#changeMenu#0" expanded="true" />
             <element signature="n#!!block;n#setCookie#0" expanded="true" />
             <element signature="n#!!block;n#getCookie#0" expanded="true" />
-            <element signature="e#3423#3491#0" expanded="true" />
             <element signature="n#!!block;n#logIn#0" expanded="true" />
+            <element signature="n#!!block;n#showLoginForm#0" expanded="true" />
             <element signature="n#!!block;n#showRegisterForm#0" expanded="true" />
             <element signature="n#!!block;n#register#0" expanded="true" />
-            <element signature="e#4573#4581#0" expanded="true" />
             <element signature="n#!!block;n#storeUser#0" expanded="true" />
             <element signature="n#!!block;n#obtainUser#0" expanded="true" />
+            <element signature="e#6616#6624#0" expanded="true" />
             <element signature="n#!!block;n#showSignedInUserPage#0" expanded="true" />
             <element signature="n#!!block;n#showGroupMenu#0" expanded="true" />
             <element signature="n#!!block;n#archiveActivityGroup#0" expanded="true" />
@@ -378,13 +371,18 @@
             <element signature="n#!!block;n#isMultiLine#0" expanded="true" />
             <element signature="n#!!block;n#getElementHeight#0" expanded="true" />
             <element signature="n#!!block;n#closeActivity#0" expanded="true" />
-            <element signature="e#8204#8304#0" expanded="true" />
             <element signature="n#!!block;n#getDeleteActivityFunction#0" expanded="true" />
-            <element signature="e#8458#8876#0" expanded="true" />
             <element signature="n#!!block;n#onLikeClicked#0" expanded="true" />
             <element signature="n#!!block;n#onShareClicked#0" expanded="true" />
             <element signature="n#!!block;n#closeSharePopup#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="42" column="36" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="36" />
         </state>
       </provider>
     </entry>

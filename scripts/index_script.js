@@ -248,6 +248,14 @@ function obtainUser(email)
 
 
 
+// drag and drop
+$(document).ready(function()
+{
+    $(".activities_group").sortable({connectWith: ".activities_group"})
+});
+
+
+
 
 function showSignedInUserPage(username)
 {
